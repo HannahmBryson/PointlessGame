@@ -1,21 +1,20 @@
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.*;
-import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.*;
+import java.awt.*;
 
+public class CommandPanel extends JPanel  {
 
-public class CommandPanel {
+    private static final long serialVersionUID = 1L;
+    private static final int FONT_SIZE = 14;
 
-private static final long serialVersonUID = 1L;
-private static final int FONT_SIZE = 14;
-
-private final JTextField commandField = JTextField();
-private final LinkedList<String> commandBuffer = new LinkedList<>();
+    private final JTextField commandField = new JTextField();
+    private final LinkedList<String> commandBuffer = new LinkedList<>();
 
     CommandPanel() {
         class AddActionListener implements ActionListener {
-            public void actionPerformed(ActionEvent event) {
+            public void actionPerformed(ActionEvent event)	{
                 synchronized (commandBuffer) {
                     commandBuffer.add(commandField.getText());
                     commandField.setText("");
@@ -23,14 +22,12 @@ private final LinkedList<String> commandBuffer = new LinkedList<>();
                 }
             }
         }
-
         ActionListener listener = new AddActionListener();
         commandField.addActionListener(listener);
         commandField.setFont(new Font("Times New Roman", Font.PLAIN, FONT_SIZE));
         setLayout(new BorderLayout());
         add(commandField, BorderLayout.CENTER);
     }
-
 
     public String getCommand() {
         String command;
@@ -48,3 +45,4 @@ private final LinkedList<String> commandBuffer = new LinkedList<>();
     }
 
 }
+
