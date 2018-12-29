@@ -15,12 +15,19 @@ class GamePanel extends JPanel {
 
     GamePanel() {
         setPreferredSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
-        setBackground(Color.BLACK);
         try {
             gameImage = ImageIO.read(this.getClass().getResource("gameBackground.jpg"));
         } catch (IOException ex) {
             System.out.println("Could not find the image file " + ex.toString());
         }
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 =(Graphics2D) g;
+        g2.drawImage(gameImage, 0, 0, FRAME_WIDTH, FRAME_HEIGHT, this);
+
     }
 
     public void refresh() {

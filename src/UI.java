@@ -3,8 +3,8 @@ import javax.swing.*;
 
 public class UI {
 
-    private static final int FRAME_WIDTH = 1150, FRAME_HEIGHT = 700;
-    
+    private static final int FRAME_WIDTH = 1150, FRAME_HEIGHT = 550;
+
     private final GamePanel gamePanel = new GamePanel();
     private final InfoPanel infoPanel = new InfoPanel();
     private final CommandPanel commandPanel = new CommandPanel();

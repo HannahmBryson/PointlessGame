@@ -4,7 +4,6 @@ public class Main {
 
         private void testUI() {
             String command;
-
             do {
                 command = ui.getCommand();
                 ui.displayString(command);

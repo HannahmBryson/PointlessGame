@@ -23,6 +23,13 @@ class ScorePanel extends JPanel {
         }
     }
 
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 =(Graphics2D) g;
+        g2.drawImage(scoreImage, 0, 0, FRAME_WIDTH, FRAME_HEIGHT, this);
+
+    }
     public void refresh() {
         revalidate();
         repaint();
