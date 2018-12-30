@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
 import javax.swing.*;
 
-public class UI {
+class UI {
 
     private static final int FRAME_WIDTH = 1366, FRAME_HEIGHT = 700;
 
@@ -18,22 +18,22 @@ public class UI {
 
         frame.add(scorePanel, BorderLayout.LINE_START);
         frame.add(gamePanel, BorderLayout.CENTER);
-       frame.add(infoPanel, BorderLayout.LINE_END);
+        frame.add(infoPanel, BorderLayout.LINE_END);
         frame.add(commandPanel,BorderLayout.PAGE_END);
         frame.setResizable(false);
         frame.setVisible(true);
     }
 
-    public String getCommand() {
+    String getCommand() {
         return commandPanel.getCommand();
     }
 
-    public void display() {
+    void display() {
         gamePanel.refresh();
         scorePanel.refresh();
     }
 
-    public void displayString(String string) {
+    void displayString(String string) {
         infoPanel.addText(string);
     }
 }
